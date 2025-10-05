@@ -111,6 +111,7 @@ body {
         align-items: center;
         padding-top: 2rem;
         transition: left 0.3s ease;
+        z-index: 1000;
     }
     
     .nav-menu.active {
@@ -119,6 +120,7 @@ body {
     
     .nav-toggle {
         display: flex;
+        z-index: 1001;
     }
     
     .nav-toggle.active span:nth-child(1) {
@@ -131,6 +133,18 @@ body {
     
     .nav-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .nav-link:hover {
+        background: rgba(102, 126, 234, 0.1);
     }
 }
 

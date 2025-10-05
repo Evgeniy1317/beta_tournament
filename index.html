@@ -54,9 +54,16 @@
         <div class="container">
             <h2 class="section-title fade-in">Tournament Flyer</h2>
             <div class="flyer-container fade-in">
-                <img src="images/3rd-Annual-Spades-Tournament.png" 
-                     alt="THE KING OF SPADES Tournament Flyer" 
-                     class="tournament-flyer-image">
+                <picture>
+                    <source srcset="./images/3rd-Annual-Spades-Tournament.jpg" type="image/jpeg">
+                    <source srcset="./images/3rd-Annual-Spades-Tournament.png" type="image/png">
+                    <img src="./images/3rd-Annual-Spades-Tournament.jpg" 
+                         alt="THE KING OF SPADES Tournament Flyer" 
+                         class="tournament-flyer-image"
+                         loading="eager"
+                         decoding="async"
+                         crossorigin="anonymous">
+                </picture>
                 <div class="flyer-overlay">
                     <div class="flyer-actions">
                         <button class="download-btn" onclick="downloadImage('png')">

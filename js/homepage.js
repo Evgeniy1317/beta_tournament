@@ -5,7 +5,38 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallaxEffects();
     initCardHoverEffects();
     initSmoothScrolling();
+    initMobileMenu();
 });
+
+// Mobile menu functionality
+function initMobileMenu() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+}
 
 // Scroll animations
 function initScrollAnimations() {
@@ -229,5 +260,64 @@ const optimizedScrollHandler = debounce(() => {
         heroBackground.style.transform = `translateY(${rate}px)`;
     }
 }, 10);
+
+// Image error handling for Edge compatibility
+function initImageErrorHandling() {
+    const flyerImage = document.querySelector('.tournament-flyer-image');
+    if (flyerImage) {
+        flyerImage.addEventListener('error', function() {
+            console.log('Image failed to load, trying alternative path...');
+            // Try alternative paths
+            const alternativePaths = [
+                './images/3rd-Annual-Spades-Tournament.jpg',
+                'images/3rd-Annual-Spades-Tournament.jpg',
+                './images/3rd-Annual-Spades-Tournament.png',
+                'images/3rd-Annual-Spades-Tournament.png',
+                '../images/3rd-Annual-Spades-Tournament.jpg',
+                '/images/3rd-Annual-Spades-Tournament.jpg'
+            ];
+            
+            let currentIndex = 0;
+            const tryNextPath = () => {
+                if (currentIndex < alternativePaths.length) {
+                    this.src = alternativePaths[currentIndex];
+                    currentIndex++;
+                } else {
+                    console.log('All image paths failed, showing fallback');
+                    this.style.display = 'none';
+                    // Show fallback message
+                    const fallbackDiv = document.createElement('div');
+                    fallbackDiv.className = 'image-fallback';
+                    fallbackDiv.innerHTML = `
+                        <div style="padding: 2rem; text-align: center; background: #f8f9fa; border-radius: 15px; border: 2px dashed #dee2e6;">
+                            <h3 style="color: #6c757d; margin-bottom: 1rem;">Tournament Flyer</h3>
+                            <p style="color: #6c757d;">Image loading issue detected. Please refresh the page or try a different browser.</p>
+                            <button onclick="location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer;">Refresh Page</button>
+                        </div>
+                    `;
+                    this.parentNode.insertBefore(fallbackDiv, this);
+                }
+            };
+            
+            this.addEventListener('error', tryNextPath);
+            tryNextPath();
+        });
+        
+        // Also try to preload the image
+        const preloadImg = new Image();
+        preloadImg.onload = function() {
+            console.log('Image preloaded successfully');
+        };
+        preloadImg.onerror = function() {
+            console.log('Image preload failed');
+        };
+        preloadImg.src = flyerImage.src;
+    }
+}
+
+// Initialize image error handling when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initImageErrorHandling();
+});
 
 window.addEventListener('scroll', optimizedScrollHandler);

@@ -282,6 +282,15 @@
     border-radius: 15px;
     max-width: 100%;
     margin: 0 auto;
+    /* Edge compatibility fixes */
+    object-fit: contain;
+    background-color: transparent;
+    border: none;
+    /* Fallback for broken images */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM2Yzc1N2QiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkltYWdlIExvYWRpbmcuLi48L3RleHQ+Cjwvc3ZnPg==');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .flyer-overlay {
@@ -430,6 +439,28 @@
     
     .download-btn, .share-btn {
         width: 100%;
+    }
+    
+    .tournament-flyer-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .flyer-container {
+        padding: 1rem;
+    }
+    
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
     }
 }
 
