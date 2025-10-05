@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Registration - THE KING OF SPADES</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css?v=13">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">♠</span>
+                <span class="logo-text">KING OF SPADES</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="rules.html" class="nav-link">Rules</a></li>
+                <li><a href="register.html" class="nav-link active">Register</a></li>
+                <li><a href="players.html" class="nav-link">Players</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h2>Team Registration</h2>
+            <p>Join THE KING OF SPADES Tournament</p>
+        </div>
+    </section>
+
+    <!-- Tournament Info Section -->
+    <section class="tournament-info-section">
+        <div class="container">
+            <h3 class="fade-in">Tournament Details</h3>
+            <div class="info-grid">
+                <div class="info-item slide-in-left">
+                    <h4>📅 Date</h4>
+                    <p>November 8, 2025</p>
+                </div>
+                <div class="info-item fade-in">
+                    <h4>⏰ Time</h4>
+                    <p>3:00 PM (Tournament starts at 4:00 PM)</p>
+                </div>
+                <div class="info-item slide-in-right">
+                    <h4>📍 Location</h4>
+                    <p>South Natomas, Sacramento CA</p>
+                    <p><em>Address will be sent after registration</em></p>
+                </div>
+                <div class="info-item slide-in-left">
+                    <h4>💰 Entry Fee</h4>
+                    <p>$20 per team</p>
+                </div>
+                <div class="info-item fade-in">
+                    <h4>🏆 Prize</h4>
+                    <p>$500 Grand Prize</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combined Payment & Form Section -->
+    <section class="payment-form-section">
+        <div class="container">
+            <h3 class="fade-in">Team Registration</h3>
+            
+            <div class="payment-form-content">
+                <!-- Registration Form -->
+                <div class="form-container">
+                    <h4>📝 Team Registration Form</h4>
+                    <p>Please fill out the form below to register your team:</p>
+                    
+                    <!-- Google Form Integration -->
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScx-LIFoYwqTcpyf3NoxeI_3L8dqcXySwUSUfcCJEwSxpoPjA/viewform?embedded=true&usp=pp_url" 
+                        width="100%" 
+                        height="400" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        class="google-form-iframe">
+                        Loading...
+                    </iframe>
+                    
+                    <div class="form-note">
+                        <h5>📝 Registration Instructions:</h5>
+                        <ul>
+                            <li>Fill out all required fields in the form above</li>
+                            <li>Provide accurate contact information for both team members</li>
+                            <li>Select your preferred payment method</li>
+                            <li>Upload proof of payment (screenshot or receipt)</li>
+                            <li>Submit the form to complete your registration</li>
+                            <li>You will receive confirmation via email</li>
+                        </ul>
+                        <button onclick="refreshForm()" class="refresh-button">🔄 Refresh Form</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The King of Spades Tournament. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/register.js"></script>
+    <script>
+        function refreshForm() {
+            const iframe = document.querySelector('.google-form-iframe');
+            const currentSrc = iframe.src;
+            const timestamp = new Date().getTime();
+            
+            // Add timestamp to force refresh
+            iframe.src = currentSrc.split('&')[0] + '&t=' + timestamp;
+            
+            // Show loading message
+            iframe.style.opacity = '0.5';
+            setTimeout(() => {
+                iframe.style.opacity = '1';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

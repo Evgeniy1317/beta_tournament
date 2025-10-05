@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Players - THE KING OF SPADES</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/players.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">♠</span>
+                <span class="logo-text">KING OF SPADES</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="rules.html" class="nav-link">Rules</a></li>
+                <li><a href="register.html" class="nav-link">Register</a></li>
+                <li><a href="players.html" class="nav-link active">Players</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h2>Registered Players</h2>
+            <p>Live Tournament Participants List</p>
+        </div>
+    </section>
+
+    <!-- Stats & Refresh Section -->
+    <section class="stats-refresh-section">
+        <div class="container">
+            <h3 class="fade-in">Tournament Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-item slide-in-left">
+                    <h4 id="total-teams">0</h4>
+                    <p>Teams Registered</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h4 id="total-players">0</h4>
+                    <p>Total Players</p>
+                </div>
+                <div class="stat-item slide-in-right">
+                    <h4 id="spots-left">16</h4>
+                    <p>Spots Remaining</p>
+                </div>
+            </div>
+            
+            <div class="tournament-info fade-in">
+                <h4>🎯 Tournament Players List</h4>
+                <p><strong>Teams will be selected at random on the day of the tournament to play each other.</strong></p>
+            </div>
+            
+            <div class="refresh-controls">
+                <button id="refresh-btn" class="refresh-btn">🔄 Refresh Players List</button>
+                <p class="last-updated" id="last-updated">Last updated: Never</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Players Section -->
+    <section class="players-section">
+        <div class="container">
+            <h3 class="fade-in">Registered Teams</h3>
+            <div id="loading" style="display: none; text-align: center; padding: 2rem;">
+                <p>Loading player data...</p>
+            </div>
+            <div id="players-container" class="players-grid">
+                <!-- Player cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The King of Spades Tournament. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/google-sheets.js"></script>
+    <script src="js/players.js"></script>
+</body>
+</html>

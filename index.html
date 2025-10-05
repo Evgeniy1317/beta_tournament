@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE KING OF SPADES - 3rd Annual Tournament</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">♠</span>
+                <span class="logo-text">KING OF SPADES</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="rules.html" class="nav-link">Rules</a></li>
+                <li><a href="register.html" class="nav-link">Register</a></li>
+                <li><a href="players.html" class="nav-link">Players</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">THE KING OF SPADES</h1>
+            <p class="hero-subtitle">3rd Annual Tournament & Birthday BBQ</p>
+            <div class="hero-cta">
+                <a href="register.html" class="cta-button cta-primary" onclick="registerTeam()">
+                    Register Your Team
+                </a>
+                <a href="rules.html" class="cta-button cta-secondary" onclick="viewRules()">
+                    View Rules
+                </a>
+                <a href="#flyer" class="cta-button cta-tertiary" onclick="scrollToFlyer()">
+                    View Flyer
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tournament Flyer Section -->
+    <section id="flyer" class="flyer-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Tournament Flyer</h2>
+            <div class="flyer-container fade-in">
+                <img src="images/3rd-Annual-Spades-Tournament.png" 
+                     alt="THE KING OF SPADES Tournament Flyer" 
+                     class="tournament-flyer-image">
+                <div class="flyer-overlay">
+                    <div class="flyer-actions">
+                        <button class="download-btn" onclick="downloadImage('png')">
+                            Download Flyer
+                        </button>
+                        <button class="share-btn" onclick="shareOnFacebook()">
+                            Share on Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Celebration Section -->
+    <section class="birthday-section">
+        <div class="container">
+            <div class="birthday-content fade-in">
+                <h2>Birthday BBQ Celebration</h2>
+                <p>Join us for an amazing day of Spades competition and birthday festivities! 
+                   Food, drinks, and great company guaranteed. Don't miss out on this special event!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tournament Info Section -->
+    <section class="tournament-info-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Tournament Information</h2>
+            <div class="info-grid">
+                <div class="info-card slide-in-left">
+                    <span class="info-card-icon">📅</span>
+                    <h3>Date & Time</h3>
+                    <p><span class="highlight">November 8, 2025</span></p>
+                    <p>Event Start: 3:00 PM</p>
+                    <p>Tournament Start: 4:00 PM</p>
+                </div>
+                
+                <div class="info-card fade-in">
+                    <span class="info-card-icon">📍</span>
+                    <h3>Location</h3>
+                    <p><span class="highlight">South Natomas</span></p>
+                    <p>Sacramento, CA</p>
+                    <p><em>Address sent after registration</em></p>
+                </div>
+                
+                <div class="info-card slide-in-right">
+                    <span class="info-card-icon">💰</span>
+                    <h3>Entry Fee & Prize</h3>
+                    <p><span class="highlight">$20 per team</span></p>
+                    <p><span class="highlight">$500 Grand Prize</span></p>
+                    <p>Winner takes all!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item slide-in-left">
+                    <h4>📞 Phone</h4>
+                    <p>209-993-2099</p>
+                </div>
+                <div class="contact-item fade-in">
+                    <h4>📍 Location</h4>
+                    <p>South Natomas, Sacramento CA</p>
+                </div>
+                <div class="contact-item slide-in-right">
+                    <h4>💳 Entry Fee</h4>
+                    <p>$20 per team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The King of Spades Tournament. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/homepage.js"></script>
+</body>
+</html>
