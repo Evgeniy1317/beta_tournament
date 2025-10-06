@@ -371,20 +371,34 @@ section, div, nav, ul, li, a, button, img {
 
 .share-btn {
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, #E4405F 0%, #F56040 100%);
-    color: white;
     border: none;
     border-radius: 50px;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(228, 64, 95, 0.3);
     width: 100%;
     max-width: 200px;
 }
 
-.share-btn:hover {
+.facebook-btn {
+    background: linear-gradient(135deg, #1877F2 0%, #42A5F5 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+}
+
+.instagram-btn {
+    background: linear-gradient(135deg, #E4405F 0%, #F56040 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(228, 64, 95, 0.3);
+}
+
+.facebook-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+}
+
+.instagram-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(228, 64, 95, 0.4);
 }

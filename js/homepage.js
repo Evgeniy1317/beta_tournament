@@ -121,6 +121,15 @@ function downloadImage(format) {
 }
 
 // Social sharing
+function shareOnFacebook() {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent('Join THE KING OF SPADES Tournament!');
+    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`;
+    
+    // Open Facebook share dialog in a new window
+    window.open(facebookUrl, 'facebook-share', 'width=600,height=400,scrollbars=yes,resizable=yes');
+}
+
 function shareOnInstagram() {
     const url = window.location.href; // Не кодируем URL для копирования
     

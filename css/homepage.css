@@ -321,18 +321,32 @@
 }
 
 .share-btn {
-    background: linear-gradient(135deg, #E4405F 0%, #F56040 100%);
-    color: white;
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 25px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.facebook-btn {
+    background: linear-gradient(135deg, #1877F2 0%, #42A5F5 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+}
+
+.instagram-btn {
+    background: linear-gradient(135deg, #E4405F 0%, #F56040 100%);
+    color: white;
     box-shadow: 0 4px 15px rgba(228, 64, 95, 0.3);
 }
 
-.share-btn:hover {
+.facebook-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+}
+
+.instagram-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4);
 }
