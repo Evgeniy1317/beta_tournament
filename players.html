@@ -19,7 +19,6 @@
                     </div>
                 </a>
                 <div class="logo-text-container">
-                    <span class="logo-icon">♠</span>
                     <span class="logo-text">KING OF SPADES</span>
                 </div>
             </div>
@@ -64,27 +63,23 @@
                 </div>
             </div>
             
-            <div class="tournament-info fade-in">
-                <h4>🎯 Tournament Players List</h4>
-                <p><strong>Teams will be selected at random on the day of the tournament to play each other.</strong></p>
-            </div>
-            
-            <div class="refresh-controls">
-                <button id="refresh-btn" class="refresh-btn">🔄 Refresh Players List</button>
-                <p class="last-updated" id="last-updated">Last updated: Never</p>
-            </div>
         </div>
     </section>
 
     <!-- Players Section -->
     <section class="players-section">
         <div class="container">
-            <h3 class="fade-in">Registered Teams</h3>
+            <h3 class="fade-in">Teams will be selected at random on the day of the tournament to play each other</h3>
             <div id="loading" style="display: none; text-align: center; padding: 2rem;">
                 <p>Loading player data...</p>
             </div>
             <div id="players-container" class="teams-table-container">
                 <!-- Teams table will be dynamically inserted here -->
+            </div>
+            
+            <div class="refresh-controls">
+                <button id="refresh-btn" class="refresh-btn">🔄 Refresh Players List</button>
+                <p class="last-updated" id="last-updated">Last updated: Never</p>
             </div>
         </div>
     </section>

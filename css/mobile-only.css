@@ -123,12 +123,6 @@ section, div, nav, ul, li, a, button, img {
     min-width: 0;
 }
 
-.logo-icon {
-    font-size: 1.2rem;
-    color: #e74c3c;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    flex-shrink: 0;
-}
 
 .logo-text {
     font-size: 0.8rem;
@@ -502,9 +496,6 @@ section, div, nav, ul, li, a, button, img {
         height: 30px;
     }
     
-    .logo-icon {
-        font-size: 1rem;
-    }
     
     .logo-text {
         font-size: 0.7rem;
