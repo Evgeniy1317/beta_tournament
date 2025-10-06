@@ -13,8 +13,15 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-icon">♠</span>
-                <span class="logo-text">KING OF SPADES</span>
+                <a href="index.html" class="logo-link">
+                    <div class="logo-image-container">
+                        <img src="./images/2025-10-06_13-03-27.png" alt="Spades Logo" class="logo-image">
+                    </div>
+                </a>
+                <div class="logo-text-container">
+                    <span class="logo-icon">♠</span>
+                    <span class="logo-text">KING OF SPADES</span>
+                </div>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
@@ -52,25 +59,17 @@
     <!-- Tournament Flyer Section -->
     <section id="flyer" class="flyer-section">
         <div class="container">
-            <h2 class="section-title fade-in">Tournament Flyer</h2>
             <div class="flyer-container fade-in">
-                <picture>
-                    <source srcset="./images/3rd-Annual-Spades-Tournament.jpg" type="image/jpeg">
-                    <source srcset="./images/3rd-Annual-Spades-Tournament.png" type="image/png">
-                    <img src="./images/3rd-Annual-Spades-Tournament.jpg" 
-                         alt="THE KING OF SPADES Tournament Flyer" 
-                         class="tournament-flyer-image"
-                         loading="eager"
-                         decoding="async"
-                         crossorigin="anonymous">
-                </picture>
+                <img src="./images/3rd-Annual-Spades-Tournament.png" 
+                     alt="THE KING OF SPADES Tournament Flyer" 
+                     class="tournament-flyer-image"
+                     loading="eager"
+                     decoding="async"
+                     crossorigin="anonymous">
                 <div class="flyer-overlay">
                     <div class="flyer-actions">
-                        <button class="download-btn" onclick="downloadImage('png')">
-                            Download Flyer
-                        </button>
-                        <button class="share-btn" onclick="shareOnFacebook()">
-                            Share on Facebook
+                        <button class="share-btn" onclick="shareOnInstagram()">
+                            Share on Instagram
                         </button>
                     </div>
                 </div>
@@ -78,16 +77,6 @@
         </div>
     </section>
 
-    <!-- Birthday Celebration Section -->
-    <section class="birthday-section">
-        <div class="container">
-            <div class="birthday-content fade-in">
-                <h2>Birthday BBQ Celebration</h2>
-                <p>Join us for an amazing day of Spades competition and birthday festivities! 
-                   Food, drinks, and great company guaranteed. Don't miss out on this special event!</p>
-            </div>
-        </div>
-    </section>
 
     <!-- Tournament Info Section -->
     <section class="tournament-info-section">
@@ -126,17 +115,9 @@
         <div class="container">
             <h2 class="section-title fade-in">Contact Information</h2>
             <div class="contact-info">
-                <div class="contact-item slide-in-left">
+                <div class="contact-item fade-in">
                     <h4>📞 Phone</h4>
                     <p>209-993-2099</p>
-                </div>
-                <div class="contact-item fade-in">
-                    <h4>📍 Location</h4>
-                    <p>South Natomas, Sacramento CA</p>
-                </div>
-                <div class="contact-item slide-in-right">
-                    <h4>💳 Entry Fee</h4>
-                    <p>$20 per team</p>
                 </div>
             </div>
         </div>

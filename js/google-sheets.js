@@ -196,16 +196,54 @@ function displayPlayers(players) {
         return;
     }
     
-    const playersGrid = document.createElement('div');
-    playersGrid.className = 'players-grid';
+    // Create table
+    const table = document.createElement('table');
+    table.className = 'teams-table';
+    
+    // Create table header
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    
+    const teamNumberHeader = document.createElement('th');
+    teamNumberHeader.textContent = 'Team #';
+    
+    const teamNameHeader = document.createElement('th');
+    teamNameHeader.textContent = 'Team Name';
+    
+    headerRow.appendChild(teamNumberHeader);
+    headerRow.appendChild(teamNameHeader);
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+    
+    // Create table body
+    const tbody = document.createElement('tbody');
     
     players.forEach((player, index) => {
-        const teamCard = createTeamCard(player, index + 1);
-        playersGrid.appendChild(teamCard);
+        const row = document.createElement('tr');
+        
+        // Team number cell
+        const teamNumberCell = document.createElement('td');
+        const teamNumberSpan = document.createElement('span');
+        teamNumberSpan.className = 'team-number';
+        teamNumberSpan.textContent = `#${index + 1}`;
+        teamNumberCell.appendChild(teamNumberSpan);
+        
+        // Team name cell
+        const teamNameCell = document.createElement('td');
+        const teamNameSpan = document.createElement('span');
+        teamNameSpan.className = 'team-name';
+        teamNameSpan.textContent = player.teamName;
+        teamNameCell.appendChild(teamNameSpan);
+        
+        row.appendChild(teamNumberCell);
+        row.appendChild(teamNameCell);
+        tbody.appendChild(row);
     });
     
+    table.appendChild(tbody);
+    
     container.innerHTML = '';
-    container.appendChild(playersGrid);
+    container.appendChild(table);
 }
 
 // Function to create team card

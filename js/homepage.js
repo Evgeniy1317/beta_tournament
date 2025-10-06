@@ -121,13 +121,19 @@ function downloadImage(format) {
 }
 
 // Social sharing
-function shareOnFacebook() {
-    const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent('Join THE KING OF SPADES Tournament!');
-    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`;
+function shareOnInstagram() {
+    const url = window.location.href; // Не кодируем URL для копирования
     
-    window.open(facebookUrl, '_blank', 'width=600,height=400');
-    showNotification('Sharing on Facebook...', 'info');
+    // Instagram doesn't have direct sharing API, so we'll copy the link and show instructions
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(() => {
+            showNotification('Link copied! Paste it in your Instagram story or post.', 'success');
+        }).catch(() => {
+            showNotification('Please copy the link manually and share on Instagram', 'info');
+        });
+    } else {
+        showNotification('Please copy the link manually and share on Instagram', 'info');
+    }
 }
 
 // Notification system

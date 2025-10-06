@@ -19,6 +19,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding-top: 120px; /* Updated to compensate for increased navbar height */
 }
 
 .hero-section::before {
@@ -235,7 +236,7 @@
 /* Tournament Flyer Section */
 .flyer-section {
     padding: 5rem 0;
-    background: var(--dark-gradient);
+    background: white;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -243,25 +244,13 @@
     justify-content: center;
 }
 
-.flyer-section .section-title {
-    color: white;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    text-align: center;
-    width: 100%;
-    margin-bottom: 3rem;
-}
-
-.flyer-section .section-title::after {
-    background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
-}
-
 .flyer-container {
     max-width: 600px;
     margin: 0 auto;
     position: relative;
-    border-radius: 20px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--card-shadow);
+    box-shadow: none;
     transition: all 0.3s ease;
     background: transparent;
     padding: 0;
@@ -271,7 +260,7 @@
 
 .flyer-container:hover {
     transform: scale(1.02);
-    box-shadow: var(--hover-shadow);
+    box-shadow: none;
 }
 
 .tournament-flyer-image {
@@ -279,7 +268,7 @@
     height: auto;
     display: block;
     transition: all 0.3s ease;
-    border-radius: 15px;
+    border-radius: 12px;
     max-width: 100%;
     margin: 0 auto;
     /* Edge compatibility fixes */
@@ -305,6 +294,7 @@
     justify-content: center;
     opacity: 0;
     transition: all 0.3s ease;
+    border-radius: 12px;
 }
 
 .flyer-container:hover .flyer-overlay {
@@ -331,13 +321,20 @@
 }
 
 .share-btn {
-    background: #3b5998;
+    background: linear-gradient(135deg, #E4405F 0%, #F56040 100%);
     color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(228, 64, 95, 0.3);
 }
 
-.download-btn:hover, .share-btn:hover {
+.share-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4);
 }
 
 /* Birthday Section */
@@ -381,33 +378,45 @@
 }
 
 .contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 3rem;
+    width: 100%;
 }
 
 .contact-item {
-    padding: 2rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 15px;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-item:hover {
     transform: translateY(-5px);
-    box-shadow: var(--card-shadow);
+    box-shadow: none;
 }
 
 .contact-item h4 {
-    font-size: 1.3rem;
-    color: #2c3e50;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-weight: 700;
 }
 
 .contact-item p {
-    color: #6c757d;
-    font-size: 1.1rem;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 1px;
 }
 
 /* Responsive Design */
@@ -437,18 +446,47 @@
         padding: 0 2rem;
     }
     
-    .download-btn, .share-btn {
+    .share-btn {
         width: 100%;
     }
     
     .tournament-flyer-image {
         max-width: 100%;
         height: auto;
-        border-radius: 10px;
+        border-radius: 12px;
     }
     
-    .flyer-container {
-        padding: 1rem;
+    .contact-section {
+        padding: 3rem 1rem;
+    }
+    
+    .contact-item {
+        padding: 2rem 1.5rem;
+        max-width: 100%;
+        margin: 0 0.5rem;
+    }
+    
+    .contact-item h4 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-item p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-item {
+        padding: 1.5rem 1rem;
+        margin: 0 0.25rem;
+    }
+    
+    .contact-item h4 {
+        font-size: 1.3rem;
+    }
+    
+    .contact-item p {
+        font-size: 1.3rem;
     }
     
     .hero-section {

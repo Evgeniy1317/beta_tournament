@@ -12,7 +12,7 @@
 
 /* Page Header */
 .page-header {
-    padding: 8rem 0 4rem 0;
+    padding: 12rem 0 4rem 0; /* Increased top padding to compensate for larger navbar */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
