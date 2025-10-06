@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE KING OF SPADES - 3rd Annual Tournament</title>
+    <link rel="stylesheet" href="css/mobile-only.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-image-container">
+                        <img src="images/2025-10-06_13-03-27.png" alt="Spades Logo" class="logo-image">
+                    </div>
+                </a>
+                <div class="logo-text-container">
+                    <span class="logo-icon">♠</span>
+                    <span class="logo-text">KING OF SPADES</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="rules.html" class="nav-link">Rules</a></li>
+                <li><a href="register.html" class="nav-link">Register</a></li>
+                <li><a href="players.html" class="nav-link">Players</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">THE KING OF SPADES</h1>
+            <p class="hero-subtitle">3rd Annual Tournament</p>
+            <div class="hero-cta">
+                <a href="register.html" class="cta-button">Register Your Team</a>
+                <a href="rules.html" class="cta-button secondary">View Rules</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tournament Flyer Section -->
+    <section id="flyer" class="flyer-section">
+        <div class="container">
+            <div class="flyer-container fade-in">
+                <img src="images/3rd-Annual-Spades-Tournament.png" 
+                     alt="THE KING OF SPADES Tournament Flyer" 
+                     class="tournament-flyer-image"
+                     loading="eager"
+                     decoding="async"
+                     crossorigin="anonymous">
+                <div class="flyer-overlay">
+                    <div class="flyer-actions">
+                        <button class="share-btn" onclick="shareOnInstagram()">
+                            Share on Instagram
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item fade-in">
+                    <h4>📞 Phone</h4>
+                    <p>209-993-2099</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The King of Spades Tournament. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile JavaScript -->
+    <script>
+        // Mobile Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    
+                    // Prevent body scroll when menu is open
+                    if (navMenu.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+            
+            const animateElements = document.querySelectorAll('.fade-in');
+            animateElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Share on Instagram function
+        function shareOnInstagram() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Join THE KING OF SPADES Tournament!');
+            
+            // Instagram doesn't have direct sharing API, so we'll copy the link and show instructions
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(() => {
+                    showNotification('Link copied! Paste it in your Instagram story or post.', 'success');
+                }).catch(() => {
+                    showNotification('Please copy the link manually and share on Instagram', 'info');
+                });
+            } else {
+                showNotification('Please copy the link manually and share on Instagram', 'info');
+            }
+        }
+        
+        // Show notification
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existingNotification = document.querySelector('.mobile-notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            const notification = document.createElement('div');
+            notification.className = `mobile-notification mobile-notification-${type}`;
+            notification.innerHTML = `
+                <div class="mobile-notification-content">
+                    <span class="mobile-notification-message">${message}</span>
+                    <button class="mobile-notification-close">&times;</button>
+                </div>
+            `;
+            
+            // Add styles
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#27ae60' : type === 'error' ? '#e74c3c' : '#3498db'};
+                color: white;
+                padding: 1rem;
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                z-index: 10000;
+                transform: translateY(-100px);
+                transition: transform 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateY(0)';
+            }, 100);
+            
+            // Close button
+            const closeBtn = notification.querySelector('.mobile-notification-close');
+            closeBtn.addEventListener('click', () => {
+                notification.style.transform = 'translateY(-100px)';
+                setTimeout(() => notification.remove(), 300);
+            });
+            
+            // Auto close after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.style.transform = 'translateY(-100px)';
+                    setTimeout(() => notification.remove(), 300);
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
