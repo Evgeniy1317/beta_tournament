@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registered Players - THE KING OF SPADES</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/players.css?v=2">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/players.css">
+    <link rel="stylesheet" href="css/mobile-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,7 +16,7 @@
             <div class="nav-logo">
                 <a href="index.html" class="logo-link">
                     <div class="logo-image-container">
-                        <img src="./images/2025-10-06_13-03-27.png" alt="Spades Logo" class="logo-image">
+                        <img src="images/2025-10-06_13-03-27.png" alt="Spades Logo" class="logo-image">
                     </div>
                 </a>
                 <div class="logo-text-container">
@@ -40,42 +41,47 @@
     <section class="page-header">
         <div class="container">
             <h2>Registered Players</h2>
-            <p>Live Tournament Participants List</p>
+            <p>See who's competing in THE KING OF SPADES Tournament</p>
         </div>
     </section>
 
-    <!-- Stats & Refresh Section -->
-    <section class="stats-refresh-section">
+    <!-- Stats Section -->
+    <section class="stats-section">
         <div class="container">
             <h3 class="fade-in">Tournament Statistics</h3>
             <div class="stats-grid">
-                <div class="stat-item slide-in-left">
+                <div class="stat-item fade-in">
                     <h4 id="total-teams">0</h4>
                     <p>Teams Registered</p>
                 </div>
-                <div class="stat-item slide-in-right">
-                    <h4 id="spots-left">16</h4>
-                    <p>Spots Remaining</p>
+                <div class="stat-item fade-in">
+                    <h4 id="total-players">0</h4>
+                    <p>Total Players</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h4>16</h4>
+                    <p>Max Teams</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h4>$500</h4>
+                    <p>Grand Prize</p>
                 </div>
             </div>
-            
+            <div class="last-updated-container">
+                <p class="last-updated" id="last-updated">Last updated: Never</p>
+            </div>
         </div>
     </section>
 
     <!-- Players Section -->
     <section class="players-section">
         <div class="container">
-            <h3 class="fade-in">Teams will be selected at random on the day of the tournament to play each other</h3>
+            <h3 class="fade-in">Registered Teams</h3>
             <div id="loading" style="display: none; text-align: center; padding: 2rem;">
                 <p>Loading player data...</p>
             </div>
             <div id="players-container" class="teams-table-container">
                 <!-- Teams table will be dynamically inserted here -->
-            </div>
-            
-            <div class="refresh-controls">
-                <button id="refresh-btn" class="refresh-btn">🔄 Refresh Players List</button>
-                <p class="last-updated" id="last-updated">Last updated: Never</p>
             </div>
         </div>
     </section>
@@ -88,8 +94,9 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="./js/main.js"></script>
-    <script src="./js/google-sheets.js"></script>
-    <script src="./js/players.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/google-sheets.js"></script>
+    <script src="js/players.js"></script>
+    <script src="js/mobile.js"></script>
 </body>
 </html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Registration - THE KING OF SPADES</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css?v=13">
+    <link rel="stylesheet" href="css/mobile-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-image-container">
+                        <img src="images/2025-10-06_13-03-27.png" alt="Spades Logo" class="logo-image">
+                    </div>
+                </a>
+                <div class="logo-text-container">
+                    <span class="logo-text">KING OF SPADES</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="rules.html" class="nav-link">Rules</a></li>
+                <li><a href="register.html" class="nav-link active">Register</a></li>
+                <li><a href="players.html" class="nav-link">Players</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h2>Team Registration</h2>
+            <p>Join THE KING OF SPADES Tournament</p>
+        </div>
+    </section>
+
+    <!-- Combined Payment & Form Section -->
+    <section class="payment-form-section">
+        <div class="container">
+            <h3 class="fade-in">Team Registration</h3>
+            
+            <!-- Payment Information -->
+            <div class="payment-info-section">
+                <div class="payment-info">
+                    <h4>💰 Payment Information</h4>
+                    <p><strong>Entry Fee:</strong> $20 per team</p>
+                    <p><strong>Payment Method:</strong> Cash only (pay on tournament day)</p>
+                    <p><strong>Registration:</strong> Complete the form below to secure your spot</p>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="registration-form-container">
+                <form id="registrationForm" class="registration-form">
+                    <div class="form-section">
+                        <h4>Team Information</h4>
+                        
+                        <div class="form-group">
+                            <label for="teamName">Team Name *</label>
+                            <input type="text" id="teamName" name="teamName" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="player1Name">Player 1 Name *</label>
+                                <input type="text" id="player1Name" name="player1Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="player1Phone">Player 1 Phone *</label>
+                                <input type="tel" id="player1Phone" name="player1Phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="player2Name">Player 2 Name *</label>
+                                <input type="text" id="player2Name" name="player2Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="player2Phone">Player 2 Phone *</label>
+                                <input type="tel" id="player2Phone" name="player2Phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emergencyContact">Emergency Contact</label>
+                            <input type="text" id="emergencyContact" name="emergencyContact">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emergencyPhone">Emergency Phone</label>
+                            <input type="tel" id="emergencyPhone" name="emergencyPhone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Additional Information</h4>
+                        
+                        <div class="form-group">
+                            <label for="experience">Spades Experience Level</label>
+                            <select id="experience" name="experience">
+                                <option value="">Select experience level</option>
+                                <option value="beginner">Beginner (0-1 years)</option>
+                                <option value="intermediate">Intermediate (2-5 years)</option>
+                                <option value="advanced">Advanced (5+ years)</option>
+                                <option value="expert">Expert (Tournament experience)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dietary">Dietary Restrictions</label>
+                            <textarea id="dietary" name="dietary" rows="3" placeholder="Any food allergies or dietary restrictions?"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comments">Additional Comments</label>
+                            <textarea id="comments" name="comments" rows="3" placeholder="Any additional information or special requests?"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                <span class="checkmark"></span>
+                                I agree to the tournament rules and regulations *
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreePayment" name="agreePayment" required>
+                                <span class="checkmark"></span>
+                                I understand the $20 entry fee is due on tournament day *
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Register Team</button>
+                        <button type="reset" class="btn btn-secondary">Reset Form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The King of Spades Tournament. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/mobile.js"></script>
+</body>
+</html>

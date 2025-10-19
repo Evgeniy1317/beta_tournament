@@ -141,13 +141,15 @@ async function updatePlayersFromGoogleSheets() {
 function updateStatistics(players) {
     console.log('Updating statistics with', players.length, 'players');
     const totalTeams = players.length;
+    const totalPlayers = totalTeams * 2;
     const maxTeams = 16;
     const spotsLeft = Math.max(0, maxTeams - totalTeams);
     
     updateStatElement('total-teams', totalTeams);
+    updateStatElement('total-players', totalPlayers);
     updateStatElement('spots-left', spotsLeft);
     
-    console.log('Statistics updated:', { totalTeams, spotsLeft });
+    console.log('Statistics updated:', { totalTeams, totalPlayers, spotsLeft });
 }
 
 // Function to update individual stat element
@@ -377,6 +379,7 @@ function forceUpdateStatistics() {
         console.error('Force update failed:', error);
         // Set default values if update fails
         updateStatElement('total-teams', 0);
+        updateStatElement('total-players', 0);
         updateStatElement('spots-left', 16);
     });
 }
