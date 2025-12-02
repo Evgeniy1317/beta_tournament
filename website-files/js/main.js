@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Set active navigation link based on current page
 function setActiveNavLink() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'register.html';
     const navLinks = document.querySelectorAll('nav a');
     
     navLinks.forEach(link => {
@@ -26,19 +26,9 @@ function setActiveNavLink() {
 
 // Initialize page-specific functionality
 function initializePage() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'register.html';
     
     switch(currentPage) {
-        case 'index.html':
-        case '':
-            initializeHomePage();
-            break;
-        case 'rules.html':
-            initializeRulesPage();
-            break;
-        case 'flyer.html':
-            initializeFlyerPage();
-            break;
         case 'register.html':
             initializeRegisterPage();
             break;
@@ -46,24 +36,6 @@ function initializePage() {
             initializePlayersPage();
             break;
     }
-}
-
-// Home page initialization
-function initializeHomePage() {
-    console.log('Home page initialized');
-    // Add any home page specific functionality here
-}
-
-// Rules page initialization
-function initializeRulesPage() {
-    console.log('Rules page initialized');
-    // Add any rules page specific functionality here
-}
-
-// Flyer page initialization
-function initializeFlyerPage() {
-    console.log('Flyer page initialized');
-    // Add any flyer page specific functionality here
 }
 
 // Register page initialization
